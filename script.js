@@ -11,7 +11,7 @@ function getComputerChoice(){
     }
 }
 function playRound(playerSelection,computerSelection){
-    playerSelection = playerSelection.substring(0,1).toUppercase() + playerSelection.substring(1).toLowerCase();
+    playerSelection = playerSelection.substring(0,1).toUpperCase() + playerSelection.substring(1).toLowerCase();
     if(playerSelection==computerSelection){
         console.log("Tie")
         return 0
@@ -53,11 +53,11 @@ function playRound(playerSelection,computerSelection){
 }
 function game(){
     wins = 0;
-    wins += playRound(prompt(),getComputerChoice())
-    wins += playRound(prompt(),getComputerChoice())
-    wins += playRound(prompt(),getComputerChoice())
-    wins += playRound(prompt(),getComputerChoice())
-    wins += playRound(prompt(),getComputerChoice())
+    wins += playRound(window.prompt(),getComputerChoice())
+    wins += playRound(window.prompt(),getComputerChoice())
+    wins += playRound(window.prompt(),getComputerChoice())
+    wins += playRound(window.prompt(),getComputerChoice())
+    wins += playRound(window.prompt(),getComputerChoice())
     if (wins>2){
         console.log("You Win")
     }
@@ -65,3 +65,4 @@ function game(){
         console.log("You Lose")
     }
 }
+game()
