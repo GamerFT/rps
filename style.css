@@ -1,0 +1,10 @@
+.tbutton{
+    display:flex;
+    justify-content:center;
+    gap: 50px;
+}
+#scoreCount{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
