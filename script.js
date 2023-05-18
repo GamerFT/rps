@@ -14,6 +14,7 @@ let pscore = 0;
 function score(pchoice, cchoice) {
   pchoice =
     pchoice.substring(0, 1).toUpperCase() + pchoice.substring(1).toLowerCase();
+  const win = document.createElement("div");
   const feed = document.querySelector("#feed");
   const content = document.createElement("div");
   content.classList.add("scores");
@@ -27,8 +28,6 @@ function score(pchoice, cchoice) {
       content.textContent = "You Win! Rock beats Scissors";
       pscore++;
     }
-    document.getElementById("pscore").innerHTML = pscore;
-    document.getElementById("cscore").innerHTML = cscore;
   } else if (pchoice == "Paper") {
     if (cchoice == "Rock") {
       content.textContent = "You Win! Paper beats Rock";
@@ -37,8 +36,6 @@ function score(pchoice, cchoice) {
       content.textContent = "You Lose! Scissors beats Paper";
       cscore++;
     }
-    document.getElementById("pscore").innerHTML = pscore;
-    document.getElementById("cscore").innerHTML = cscore;
   } else if (pchoice == "Scissors") {
     if (cchoice == "Rock") {
       content.textContent = "You Lose! Rock beats Scissors";
@@ -47,12 +44,18 @@ function score(pchoice, cchoice) {
       content.textContent = "You Win! Scissors beats Paper";
       pscore++;
     }
-    document.getElementById("pscore").innerHTML = pscore;
-    document.getElementById("cscore").innerHTML = cscore;
   } else {
     return 0;
   }
+  document.getElementById("pscore").innerHTML = pscore;
+  document.getElementById("cscore").innerHTML = cscore;
+  if (pscore == 5) {
+    win.textContent = "You Won the Game!";
+  } else if (cscore == 5) {
+    win.textContent = "You Lost the Game!";
+  }
   feed.appendChild(content);
+  feed.appendChild(win);
 }
 
 const buttons = document.querySelectorAll("button");
